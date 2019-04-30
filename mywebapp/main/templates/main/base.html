@@ -1,0 +1,24 @@
+{% extends "main/header.html" %}
+{% block content %}
+  {% load ratings %}
+  {% load static %}
+  <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+  <div class="row">
+    {% for r in restaurants %}
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-content" style="border-bottom: 4px solid #f06292;">
+              <span class="card-title">{{r.restaurant_name}}</span>
+              <p>Distance : {{r.restaurant_distance}}</p>
+              <P>{% ratings r template_name='star_ratings\wibase.html' %}</P>
+              
+            </div>
+            <div class="card-action" >
+              <a class = "black-text" href="wait/{{ r.id }}/">Check Waiting time</a>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+  </div>
+
+{% endblock %}

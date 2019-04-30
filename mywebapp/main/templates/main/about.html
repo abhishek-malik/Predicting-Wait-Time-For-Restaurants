@@ -1,0 +1,29 @@
+<head>
+    {% load static %}
+    {% load ratings %}
+    <!-- Compiled and minified CSS -->
+    <link href="{% static 'main/css/materialize.css' %}" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+    </script>
+</head>
+
+<body class="container">
+
+<header><h3>About the project</h3></header>
+<div>
+	<p>One of the most frustrating task is waiting in a line and what is even worse is when you’re waiting for food. Now, one can either stay in the line or look for another restaurant, and what if another restaurant have its own waiting queue. This is one of the problem food industry consumer faces in day to day life, scenario is worse during the festival season or with a popular restaurant. <br>
+This project focuses on resolving this issue, with the help of machine learning. It uses data of waiting time from each restaurant and other facts about the restaurant and the comprising environment. Some of the important data points to train our model are - 
+<ul>
+<li>Zone - Depending upon the zone rush at a restaurant may vary.</li>
+<li>Day - Wait time differs according to different days, might be high during weekends.</li>
+<li>Weather - Wait times will be low due to less rush during extreme weather conditions</li>
+<li>Temperature - Different restaurants are preferred according to the temperature conditions in a particular area.</li>
+<li>Festival - Variation in waiting time due to festivals.</li>
+<li>Realtime - Actual wait time to confirm test data.</li>
+</ul>
+<br>
+Now all these data points are trained using a K-NN classifier, after the classification result data helps us establish a relationship between the factors affecting the waiting time and the dual relationship among the factors itself. Once the data is predicted and shown to the consumer, another important task is to ensure that the users are following and avoiding the rush, to implement this we use the concept of virtual queues, where users can add themselves to the queue of any given restaurant and as orders are being processed queue is reduced by the restaurant. Finally, to avoid customers switching from our application we have added the map functionality in the application. This uses google maps api for the coordinates and they are passed to the template as per the request. Hence, this application becomes one stop for all the frustration related needs that consumers face while waiting in a queue for their food.
+</p>
+</div>
+</body>

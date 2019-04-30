@@ -1,0 +1,41 @@
+<head>
+    {% load static %}
+    {% load ratings %}
+    <!-- Compiled and minified CSS -->
+    <link href="{% static 'main/css/materialize.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+    
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper container ">
+      <a href="" class="brand-logo">Wait Time Predictions</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="">{{user.username}}</a></li>
+          <li><a href="/logout">Logout</a></li>
+        {% else %}
+          <li><a href="/register">Register</a></li>
+          <li><a href="/login">Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+  {% if messages %}
+  	{% for message in messages %}
+  		<script>M.toast({html: "{{message}}", classes: 'grey-blue rounded', displayLength:2000});</script>
+  	{% endfor %}
+  {% endif %}
+
+  <div class="container">
+    <br>
+    {% block content %}
+    {% endblock %}
+  </div>
+            
+</body>
