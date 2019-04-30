@@ -1,8 +1,8 @@
 from yahoo_weather.weather import YahooWeather
 from yahoo_weather.config.units import Unit
-weather = YahooWeather(APP_ID="niG5UY74",
-                     api_key="dj0yJmk9RW43TFJUdGZkZmdUJnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTM3",
-                     api_secret="a825085163de09c4ce292e99b575577b3b6a36f1")
+weather = YahooWeather(APP_ID="",
+                     api_key="",
+                     api_secret="")
 
 weather.get_yahoo_weather_by_city("Vellore", Unit.celsius)
 print(weather.condition.text)
