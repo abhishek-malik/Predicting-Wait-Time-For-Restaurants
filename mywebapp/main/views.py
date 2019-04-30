@@ -22,9 +22,9 @@ from yahoo_weather.weather import YahooWeather
 from yahoo_weather.config.units import Unit
 
 
-weather = YahooWeather(APP_ID="niG5UY74",
-                     api_key="dj0yJmk9RW43TFJUdGZkZmdUJnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTM3",
-                     api_secret="a825085163de09c4ce292e99b575577b3b6a36f1")
+weather = YahooWeather(APP_ID="APP_ID",
+                     api_key="API_KEY",
+                     api_secret="API_SECRET")
 
 weather.get_yahoo_weather_by_city("Vellore", Unit.celsius)
 
@@ -79,7 +79,7 @@ def wait(request, id1, id):
 		temperature[i] = new_weather[i].high
 
 
-	df = pd.read_csv("H:\Project-Website\mywebapp\main\TRAIN_SET.csv")
+	df = pd.read_csv("H:\Project-Website\mywebapp\main\TRAIN_SET.csv") #Change your path here
 
 	df.drop(['Date'],1,inplace=True)
 	df.drop(['Day'],1,inplace=True)
